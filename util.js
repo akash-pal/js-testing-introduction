@@ -24,3 +24,14 @@ exports.validateInput = (text, notEmpty, isNumber) => {
   }
   return true;
 };
+
+/*combination of generate and validate function for integration test */
+exports.checkAndGenerate = (name,age) => {
+   if (
+    !this.validateInput(name, true, false) ||
+    !this.validateInput(age, false, true)
+  ) {
+    return false;
+  }
+  return this.generateText(name, age);
+}
