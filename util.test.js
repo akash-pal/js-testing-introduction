@@ -23,8 +23,8 @@ test('should generate a valid text output', () => {
 /*end-to-end-test*/
 test('should create an element with text and correct class', async ()=> {
     const browser = await puppeteer.launch({
-        headless: false,
-        slowMo: 80
+        headless: true
+        //slowMo: 80
     });
     const page = await browser.newPage();
     await page.goto('file:///C:/Users/akashpal/Projects/js-testing-introduction/index.html');
