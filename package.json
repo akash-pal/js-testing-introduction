@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack app.js --mode development --watch",
-    "test": "jest --watch --runInBand --detectOpenHandles"
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "js",
@@ -19,7 +20,7 @@
     "e2e",
     "tests"
   ],
-  "author": "Maximilian Schwarzmüller/ Academind GmbH",
+  "author": "Akash Pal",
   "license": "ISC",
   "devDependencies": {
     "jest": "^26.4.0",
@@ -29,5 +30,11 @@
   },
   "dependencies": {
     "http": "0.0.1-security"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/*.js"
+    ]
   }
 }

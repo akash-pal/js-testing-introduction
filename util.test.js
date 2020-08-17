@@ -1,7 +1,13 @@
 const puppeteer = require('puppeteer');
 const {generateText, checkAndGenerate} =  require('./util');
 
-/* unit test*/
+/*Snapshot Testing*/
+test('checking the format', () => {
+    const text = generateText('Akash', 27);
+    expect(text).toMatchSnapshot();
+});
+
+/*unit test*/
 test('should output name and age', () => {
     const text = generateText('Akash', 27);
     expect(text).toBe('Akash (27 years old)');
@@ -23,7 +29,7 @@ test('should generate a valid text output', () => {
 /*end-to-end-test*/
 test('should create an element with text and correct class', async ()=> {
     const browser = await puppeteer.launch({
-        headless: true
+        headless: false
         //slowMo: 80
     });
     const page = await browser.newPage();
